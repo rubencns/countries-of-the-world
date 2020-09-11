@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { ThemeProvider } from "styled-components";
+import GlobalStyle from "./global-style";
+import { darkMode, lightMode } from "./themes";
+import AppStyle from "./app-style";
 
-function App() {
+export default () => {
+  const [mode, setMode] = useState(lightMode);
+
+  const handleMode = () => {
+    if (mode === lightMode) setMode(darkMode);
+    else setMode(lightMode);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={mode}>
+      <GlobalStyle />
+      <AppStyle>
+        <h1>App</h1>
+        <button onClick={handleMode}>Switch</button>
+      </AppStyle>
+    </ThemeProvider>
   );
-}
-
-export default App;
+};
