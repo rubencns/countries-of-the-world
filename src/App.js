@@ -3,21 +3,22 @@ import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./global-style";
 import { darkMode, lightMode } from "./themes";
 import AppStyle from "./app-style";
+import Header from "./components/header/Header";
 
 export default () => {
-  const [mode, setMode] = useState(lightMode);
+  const [themeColor, setThemeColor] = useState(lightMode);
 
-  const handleMode = () => {
-    if (mode === lightMode) setMode(darkMode);
-    else setMode(lightMode);
+  const handleTheme = () => {
+    if (themeColor === lightMode) setThemeColor(darkMode);
+    else setThemeColor(lightMode);
   };
 
   return (
-    <ThemeProvider theme={mode}>
+    <ThemeProvider theme={themeColor}>
       <GlobalStyle />
       <AppStyle>
-        <h1>App</h1>
-        <button onClick={handleMode}>Switch</button>
+        <Header handleTheme={handleTheme} themeColor={themeColor} />
+        <div className="main">Main</div>
       </AppStyle>
     </ThemeProvider>
   );

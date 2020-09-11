@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
 export default styled.div`
-  height: 100vh;
+  position: relative;
+
+  .main {
+    margin-top: 120px;
+  }
 `;
