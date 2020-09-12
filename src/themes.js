@@ -1,10 +1,16 @@
+const breakpoints = {
+  mobile: "425px",
+  tablet: "768px",
+  desktop: "1366px",
+};
+
 const fonts = {
   family: "'Nunito Sans', 'sans-serif'",
   size: {
     xLarge: "24px",
     large: "20px",
     medium: "15px",
-    small: "10px",
+    small: "14px",
   },
   weight: {
     light: 300,
@@ -14,17 +20,21 @@ const fonts = {
 };
 
 export const darkMode = {
+  breakpoints,
   fonts,
   colors: {
     text: "hsl(0, 0%, 100%)",
     elements: "hsl(209, 23%, 22%)",
     background: "hsl(207, 26%, 17%)",
+    input: "hsl(0, 0%, 100%)",
     shadow: "#1c1c1c",
+    hover: "#858585",
     moon: "hsl(0, 0%, 100%)",
   },
 };
 
 export const lightMode = {
+  breakpoints,
   fonts,
   colors: {
     text: "hsl(200, 15%, 8%)",
@@ -32,6 +42,7 @@ export const lightMode = {
     background: "hsl(0, 0%, 98%)",
     input: "hsl(0, 0%, 52%)",
     shadow: "#ddd",
+    hover: "#eee",
     moon: "hsl(200, 15%, 8%)",
   },
 };
