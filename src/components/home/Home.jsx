@@ -1,30 +1,32 @@
-import React, {useState} from 'react';
-import {ReactComponent as SearchIcon} from '../../assets/svg/search.svg';
-import {ReactComponent as AngleDownIcon} from '../../assets/svg/angle-down.svg';
-import {ReactComponent as AngleUpIcon} from '../../assets/svg/angle-up.svg';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { getCountries, filterByRegion } from '../../requests';
+import Search from '../search/Search';
+import CardGrid from '../card-grid/CardGrid';
 import HomeStyle from './home-style';
 
 export default () => {
-  const [isHidden, setHide] = useState(true);
-  const regions = ['Africa', 'America', 'Asia', 'Europe', 'Oceania'];
+  const [region, setRegion] = useState(null);
+  const [countries, setCountries] = useState([]);
 
+  useEffect(() => {
+    const handleRequests = async () => {
+      if(region === null) {
+        const { data } = await getCountries();
+        setCountries(data);
+      } 
+      else {
+        const { data } = await filterByRegion(region);
+        setCountries(data);
+      }
+    }
+    handleRequests();
+  }, [region]);
+  
   return (
-    <HomeStyle isHidden={isHidden}>
-      <div className="search">
-        <div className="search-input element">
-          <SearchIcon className="icon" />
-          <input className="" type="text" placeholder="Search for a country..." />
-        </div>
-        <div className="search-filter element" onClick={() => setHide(!isHidden)}>
-          <span>Filter by Region</span>
-          {isHidden ? <AngleUpIcon className="icon" /> : <AngleDownIcon className="icon" />}
-          <div className="dropdown element">
-            {regions.map(e => 
-              <span className="dropdown-item" onClick={() => console.log(e)}>{e}</span>
-            )}
-          </div>
-        </div>
-      </div>
+    <HomeStyle>
+      <Search countries={countries} setRegion={setRegion}/>
+      <CardGrid countries={countries} />
     </HomeStyle>
   )
 }

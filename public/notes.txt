@@ -1,0 +1,5 @@
+- light text color
+- dark shadow color
+- fix no data 
+- split country component code
+- search input functionality

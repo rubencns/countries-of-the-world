@@ -1,13 +1,13 @@
 const breakpoints = {
   mobile: "425px",
   tablet: "768px",
-  desktop: "1366px",
+  desktop: "1024px",
 };
 
 const fonts = {
   family: "'Nunito Sans', 'sans-serif'",
   size: {
-    xLarge: "24px",
+    xLarge: "28px",
     large: "20px",
     medium: "15px",
     small: "14px",

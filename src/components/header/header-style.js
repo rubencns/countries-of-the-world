@@ -6,11 +6,12 @@ export default styled.div`
   left: 0;
   width: 100%;
   background: ${({ theme: { colors } }) => colors.elements};
-  padding: 20px 20px;
+  padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: 1px 1px 5px ${({ theme: { colors } }) => colors.shadow};
+  z-index: 2;
 
   @media (min-width: ${({ theme: { breakpoints } }) => breakpoints.tablet}) {
     padding: 20px 70px;

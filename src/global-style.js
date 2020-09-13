@@ -8,17 +8,28 @@ export default createGlobalStyle`
     list-style: none;
   }
 
-
   body {
     font-family: ${({ theme: { fonts } }) => fonts.family};
     font-size: ${({ theme: { fonts } }) => fonts.size.small};
+    font-weight: ${({ theme: { fonts } }) => fonts.weight.light};
     color: ${({ theme: { colors } }) => colors.text};
     background: ${({ theme: { colors } }) => colors.background};
-    padding: 0 20px;
+    padding: 0 40px;
 
     @media (min-width: ${({ theme: { breakpoints } }) => breakpoints.tablet}) {
       padding: 0 70px;
     }
+  }
+
+  h1 {
+    font-size: ${({ theme: { fonts } }) => fonts.size.xLarge};
+    font-weight: 800;
+    margin: 0;
+  }
+
+  h2 {
+    font-size: ${({ theme: { fonts } }) => fonts.size.medium};
+    font-weight: 800;
   }
 
   h3 {
@@ -27,7 +38,7 @@ export default createGlobalStyle`
   }
 
   .element {
-    color: ${({ theme: { colors } }) => colors.input};
+    color: ${({ theme: { colors } }) => colors.text};
     background: ${({ theme: { colors } }) => colors.elements};
     border: none;
     border-radius: 5px;
@@ -38,7 +49,15 @@ export default createGlobalStyle`
     }
   }
 
+  .button {
+    &:hover {
+      background: ${({ theme: { colors } }) => colors.text};
+      color: ${({ theme: { colors } }) => colors.elements};
+    }
+  }
+
   button {
-    cursor: pointer;
+    cursor: 
+    pointer;
   }
 `;
