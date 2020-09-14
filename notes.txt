@@ -1,4 +1,6 @@
 - light text color
 - dark shadow color
-- fix no data 
+- fix no data ui
+- handle errors
 - split and refactor country component code
+- 404 component

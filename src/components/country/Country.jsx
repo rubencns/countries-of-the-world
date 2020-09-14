@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import axios from "axios";
 import { useHistory, useParams } from 'react-router-dom';
 import handleRoute from '../../utils/handle-route';
+import CountryService from '../../services/country-service';
 import { ReactComponent as LeftArrrowIcon } from '../../assets/svg/left-arrow.svg';
 import CountryStyle from './country-style';
 
@@ -11,34 +11,20 @@ export default () => {
   const { id } = useParams();
   const history = useHistory();
 
-  const getBorderCountries = async (data) => {
-    try {
-      let countries = [];
-      for (let code of data.borders) {
-        const { data } = await axios.get(
-          `https://restcountries.eu/rest/v2/alpha/${code}`
-        );
-        countries.push(data);
-      }
-      setBorderCountries(countries);
-    } catch (e) {
-      console.error(e);
-    }
+  const getBorderCountries = async (borders) => {
+    const data = await CountryService.getBorderCountries(borders);
+    setBorderCountries(data);
   };
   
   const getCountry = async () => {
-    try {
-      const { data } = await axios.get(`https://restcountries.eu/rest/v2/alpha/${id}`);
-      setCountry(data);
-      getBorderCountries(data);
-    } catch (e) {
-      console.error(e);
-    }
+    const { data, data: {borders} } = await CountryService.getCountry(id);
+    setCountry(data);
+    if(borders.length) getBorderCountries(borders)
   };
 
   useEffect (() => {
     getCountry();
-  }, [country]); 
+  }, [id]); 
   
   return (
     <CountryStyle>
