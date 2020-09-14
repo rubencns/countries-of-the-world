@@ -36,7 +36,7 @@ export default ({ input, setInput, region, setRegion, countries, setCountries })
   return (
     <SearchStyle isHidden={isHidden}>
       <form onSubmit={handleForm} className="search-input element">
-        <SearchIcon type="submit" className="icon" />
+        <button type="submit"><SearchIcon className="icon" /></button>
         <input type="text" placeholder="Search for a country..." value={input} onChange={handleInput} />
         <div className="dropdown element">
           {results && 

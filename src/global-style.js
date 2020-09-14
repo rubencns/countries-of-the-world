@@ -45,9 +45,20 @@ export default createGlobalStyle`
     box-shadow: 1px 1px 10px ${({ theme: { colors } }) => colors.shadow};
   }
 
-  input::placeholder {
-      color: ${({ theme: { colors } }) => colors.input};
+  input {
+    background: ${({ theme: { colors } }) => colors.elements};
+    color: ${({ theme: { colors } }) => colors.text};
+    border: none;
+    border-radius: 5px;
+    
+    &::placeholder {
+      color: ${({ theme: { colors } }) => colors.input};   
     }
+    &:focus {
+      outline: none;
+    }
+      
+  }
 
   .button {
     &:hover {
@@ -57,7 +68,12 @@ export default createGlobalStyle`
   }
 
   button {
-    cursor: 
-    pointer;
+    cursor: pointer;
+    border: none;
+    background: none;
+
+    &:focus {
+      outline: none;
+    }
   }
 `;

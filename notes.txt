@@ -1,6 +1,4 @@
 - light text color
 - dark shadow color
 - fix no data 
-- split country component code
-- search input functionality
-- search icon doesn't work
+- split and refactor country component code

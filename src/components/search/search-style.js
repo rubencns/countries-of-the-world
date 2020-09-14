@@ -27,17 +27,17 @@ export default styled.div`
 
     .icon {
       width: 15px;
-      margin-left: 25px;
+      margin: 0 30px;
       color: ${({ theme: { colors } }) => colors.input};
       cursor: pointer;
+
+      &:hover {
+        color: ${({ theme: { colors } }) => colors.hover};
+      }
     }
 
     input {
-      padding: 18px 25px;
-      background: ${({ theme: { colors } }) => colors.elements};
-      color: ${({ theme: { colors } }) => colors.text};
-      border: none;
-      border-radius: 5px;
+      padding: 18px 0;
       width: 100%;
     }
 
