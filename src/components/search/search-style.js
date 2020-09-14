@@ -17,6 +17,13 @@ export default styled.div`
   .search-input {
     width: 100%;
     display: flex;
+    position: relative;
+
+    .dropdown {
+      visibility: ${({ isHidden }) => isHidden.search && "hidden"};
+      max-height: 300px;
+      overflow: scroll;
+    }
 
     .icon {
       width: 15px;
@@ -47,6 +54,10 @@ export default styled.div`
     position: relative;
     cursor: pointer;
 
+    .dropdown {
+      visibility: ${({ isHidden }) => isHidden.filter && "hidden"};
+    }
+
     .icon {
       width: 10px;
       margin-left: 25px;
@@ -56,32 +67,33 @@ export default styled.div`
     @media (min-width: ${({ theme: { breakpoints } }) => breakpoints.tablet}) {
       width: 200px;
     }
+  }
 
-    .dropdown {
-      visibility: ${({ isHidden }) => isHidden && "hidden"};
-      position: absolute;
-      top: 57px;
-      left: 0;
-      height: auto;
-      width: 100%;
+  .dropdown {
+    position: absolute;
+    top: 57px;
+    left: 0;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 1;
+
+    &-item {
       display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
       align-items: center;
-      padding: 15px 0;
+      min-height: 50px;
+      width: 100%;
+      padding: 7px 23px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      cursor: pointer;
 
-      &-item {
-        height: 100%;
-        width: 100%;
-        padding: 7px 23px;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: nowrap;
-        cursor: pointer;
-
-        &:hover {
-          background: ${({ theme: { colors } }) => colors.hover};
-        }
+      &:hover {
+        background: ${({ theme: { colors } }) => colors.hover};
       }
     }
   }

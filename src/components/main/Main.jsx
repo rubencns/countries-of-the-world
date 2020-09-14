@@ -4,7 +4,6 @@ import Home from '../home/Home';
 import MainStyle from './main-style';
 import Country from '../country/Country';
 
-
 export default () => {
 
   return (

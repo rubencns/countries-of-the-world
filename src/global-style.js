@@ -43,11 +43,11 @@ export default createGlobalStyle`
     border: none;
     border-radius: 5px;
     box-shadow: 1px 1px 10px ${({ theme: { colors } }) => colors.shadow};
+  }
 
-    &::placeholder {
+  input::placeholder {
       color: ${({ theme: { colors } }) => colors.input};
     }
-  }
 
   .button {
     &:hover {

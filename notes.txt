@@ -3,3 +3,4 @@
 - fix no data 
 - split country component code
 - search input functionality
+- search icon doesn't work
