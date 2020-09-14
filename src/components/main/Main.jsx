@@ -1,8 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from '../home/Home';
-import MainStyle from './main-style';
 import Country from '../country/Country';
+import NotFound from '../not-found/NotFound';
+import MainStyle from './main-style';
 
 export default () => {
 
@@ -11,7 +12,8 @@ export default () => {
       <Router>
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/:id" component={Country} />
+          <Route path="/country/:id" component={Country} />
+          <Route component={NotFound} />
         </Switch>
       </Router>
     </MainStyle>
