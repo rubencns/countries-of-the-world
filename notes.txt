@@ -1,3 +1,0 @@
-- fix no data ui
-- handle errors
-- Modified NotFound component and rename to ErrorPage
