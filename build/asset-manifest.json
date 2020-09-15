@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.js": "/countries-of-the-world/static/js/main.7f639468.chunk.js",
+    "main.js.map": "/countries-of-the-world/static/js/main.7f639468.chunk.js.map",
+    "runtime-main.js": "/countries-of-the-world/static/js/runtime-main.7b657511.js",
+    "runtime-main.js.map": "/countries-of-the-world/static/js/runtime-main.7b657511.js.map",
+    "static/js/2.994eb86a.chunk.js": "/countries-of-the-world/static/js/2.994eb86a.chunk.js",
+    "static/js/2.994eb86a.chunk.js.map": "/countries-of-the-world/static/js/2.994eb86a.chunk.js.map",
+    "index.html": "/countries-of-the-world/index.html",
+    "precache-manifest.7775cdcf91ca6f2461c1fd1530397623.js": "/countries-of-the-world/precache-manifest.7775cdcf91ca6f2461c1fd1530397623.js",
+    "service-worker.js": "/countries-of-the-world/service-worker.js",
+    "static/js/2.994eb86a.chunk.js.LICENSE.txt": "/countries-of-the-world/static/js/2.994eb86a.chunk.js.LICENSE.txt",
+    "static/media/angle-down.8bad8773.svg": "/countries-of-the-world/static/media/angle-down.8bad8773.svg",
+    "static/media/angle-up.ecc41bdb.svg": "/countries-of-the-world/static/media/angle-up.ecc41bdb.svg",
+    "static/media/left-arrow.d9d4427b.svg": "/countries-of-the-world/static/media/left-arrow.d9d4427b.svg",
+    "static/media/moon.9b094a53.svg": "/countries-of-the-world/static/media/moon.9b094a53.svg",
+    "static/media/search.113e3381.svg": "/countries-of-the-world/static/media/search.113e3381.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7b657511.js",
+    "static/js/2.994eb86a.chunk.js",
+    "static/js/main.7f639468.chunk.js"
+  ]
+}
