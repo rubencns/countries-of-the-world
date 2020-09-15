@@ -3,17 +3,29 @@ import config from "../config";
 
 export default {
   getCountry: async (id) => {
-    return await axios.get(`${config.BASE_URL}/alpha/${id}`);
+    try {
+      return await axios.get(`${config.BASE_URL}/alpha/${id}`);
+    } catch (e) {
+      return e;
+    }
   },
   getCountries: async () => {
-    return await axios.get(`${config.BASE_URL}/all`);
+    try {
+      return await axios.get(`${config.BASE_URL}/all/`);
+    } catch (e) {
+      return e;
+    }
   },
   getBorderCountries: async (borders) => {
     let query = "?codes=";
     for (let code of borders) {
       query += `${code};`;
     }
-    const { data } = await axios.get(`${config.BASE_URL}/alpha${query}`);
-    return data;
+    try {
+      const { data } = await axios.get(`${config.BASE_URL}/alpha${query}`);
+      return data;
+    } catch (e) {
+      return e;
+    }
   },
 };
