@@ -1,4 +1,3 @@
-- light text color
 - dark shadow color
 - fix no data ui
 - handle errors

@@ -42,7 +42,7 @@ export default createGlobalStyle`
     background: ${({ theme: { colors } }) => colors.elements};
     border: none;
     border-radius: 5px;
-    box-shadow: 1px 1px 10px ${({ theme: { colors } }) => colors.shadow};
+    box-shadow: 1px 1px 5px ${({ theme: { colors } }) => colors.shadow};
   }
 
   input {

@@ -27,7 +27,7 @@ export const darkMode = {
     elements: "hsl(209, 23%, 22%)",
     background: "hsl(207, 26%, 17%)",
     input: "hsl(0, 0%, 100%)",
-    shadow: "#1c1c1c",
+    shadow: "#242424",
     hover: "#858585",
     moon: "hsl(0, 0%, 100%)",
   },
