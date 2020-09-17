@@ -1,4 +1,4 @@
 export default (history, param) => {
-  if (param) history.push(`/country/${param}`);
-  else history.push("/");
+  if (param) history.replace(`/country/${param}`);
+  else history.replace("/");
 };
