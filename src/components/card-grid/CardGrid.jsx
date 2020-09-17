@@ -9,7 +9,7 @@ export default ({ countries }) => {
       {
         countries.length
         ? countries.map(c => <Card key={c.alpha3Code} country={c} />)
-        : <h1>Loading...</h1> 
+        : <h1>No data...</h1> 
       }
     </CardGridStyle>
   )
