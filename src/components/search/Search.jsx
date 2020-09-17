@@ -9,11 +9,14 @@ import SearchStyle from './search-style';
 
 export default ({ input, setInput, region, setRegion, countries, setCountries }) => {
   const [results, setResults] = useState([]);
-  const [isHidden, setHidden] = useState({ search: true, filter: true });
+  const [isSearchHidden, setHiddenSearch] = useState({ search: true, filter: true });
+  const [isFilterHidden, setHiddenFilter] = useState({ search: true, filter: true });
   const regions = ['All', 'Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
   const history = useHistory();
-  const ref = useRef();
-  useOnClickOutside(ref, () => setHidden({search: true, filter: true}));
+  const refSearch = useRef();
+  const refFilter = useRef();
+  useOnClickOutside(refSearch, () => setHiddenSearch(true));
+  useOnClickOutside(refFilter, () => setHiddenFilter(true));
 
   const handleInput = ({ target : { value } }) => {
     setInput(value.toLowerCase());
@@ -26,22 +29,22 @@ export default ({ input, setInput, region, setRegion, countries, setCountries })
 
   const handleForm = e => {
     e.preventDefault();
-    setHidden({...isHidden, search: true});
+    setHiddenSearch(true);
     setCountries(results);
   }
 
   useEffect(() => {
     onChange();
-    if(!input.length) setHidden({...isHidden, search: true});
-    else setHidden({...isHidden, search: false});
+    if(!input.length) setHiddenSearch(true);
+    else setHiddenSearch(false);
   }, [input]);
   
   return (
-    <SearchStyle isHidden={isHidden}>
+    <SearchStyle isSearchHidden={isSearchHidden} isFilterHidden={isFilterHidden}>
       <form onSubmit={handleForm} className="search-input element">
         <button type="submit"><SearchIcon className="icon" /></button>
         <input type="text" placeholder="Search for a country..." value={input} onChange={handleInput} />
-        <div className="dropdown element" ref={ref}>
+        <div className="dropdown element" ref={refSearch}>
           {results && 
             results.map(r => 
               <span className="dropdown-item" onClick={() => handleRoute(history, r.alpha3Code)} key={r.alpha3Code}>{r.name}</span>
@@ -49,10 +52,10 @@ export default ({ input, setInput, region, setRegion, countries, setCountries })
         </div>
       </form>
       <div className="search-filter element" 
-        onClick={() => setHidden({...isHidden, filter: !isHidden.filter})}>
+        onClick={() => setHiddenFilter(!isFilterHidden)}>
         <span>{region === 'All' ? 'Filter by Region' : region}</span>
-        {isHidden ? <AngleUpIcon className="icon" /> : <AngleDownIcon className="icon" />}
-        <div className="dropdown element" ref={ref}>
+        {isFilterHidden ? <AngleUpIcon className="icon" /> : <AngleDownIcon className="icon" />}
+        <div className="dropdown element" ref={refFilter}>
           {regions.map(e => 
             <span className="dropdown-item" onClick={() => setRegion(e)} key={e}>{e}</span>
           )}

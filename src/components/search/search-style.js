@@ -20,7 +20,7 @@ export default styled.div`
     position: relative;
 
     .dropdown {
-      visibility: ${({ isHidden }) => isHidden.search && "hidden"};
+      visibility: ${({ isSearchHidden }) => isSearchHidden && "hidden"};
       max-height: 300px;
       overflow: scroll;
     }
@@ -55,7 +55,7 @@ export default styled.div`
     cursor: pointer;
 
     .dropdown {
-      visibility: ${({ isHidden }) => isHidden.filter && "hidden"};
+      visibility: ${({ isFilterHidden }) => isFilterHidden && "hidden"};
     }
 
     .icon {
