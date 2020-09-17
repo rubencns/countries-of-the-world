@@ -9,7 +9,7 @@ export default () => {
 
   return (
     <MainStyle>
-      <HashRouter basename={process.env.PUBLIC_URL}>
+      <HashRouter basename='/'>
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/country/:id" component={Country} />
