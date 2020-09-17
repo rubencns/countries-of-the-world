@@ -33,8 +33,12 @@ export default createGlobalStyle`
   }
 
   h3 {
-    font-size: ${({ theme: { fonts } }) => fonts.size.large};
+    font-size: ${({ theme: { fonts } }) => fonts.size.medium};
     font-weight: 800;
+
+    @media (min-width: ${({ theme: { breakpoints } }) => breakpoints.mobile}) {
+      font-size: ${({ theme: { fonts } }) => fonts.size.large};
+    }
   }
 
   .element {

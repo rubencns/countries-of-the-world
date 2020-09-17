@@ -26,12 +26,22 @@ export default styled.div`
 
     span {
       color: ${({ theme: { colors } }) => colors.text};
-      font-size: ${({ theme: { fonts } }) => fonts.size.medium};
+      font-size: ${({ theme: { fonts } }) => fonts.size.small};
       font-weight: ${({ theme: { fonts } }) => fonts.weight.semiBold};
+
+      @media (min-width: ${({ theme: { breakpoints } }) =>
+          breakpoints.mobile}) {
+        font-size: ${({ theme: { fonts } }) => fonts.size.medium};
+      }
     }
 
     .icon {
       margin-right: 8px;
+
+      @media (max-width: ${({ theme: { breakpoints } }) =>
+          breakpoints.mobile}) {
+        width: 12px;
+      }
 
       .moon {
         fill: ${({ theme: { colors } }) => colors.text};
