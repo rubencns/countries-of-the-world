@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ca699336631fe95d1c383afde2326940",
+    "revision": "512dc3030ddff119be108f68b10cddf5",
     "url": "/countries-of-the-world/index.html"
   },
   {
-    "revision": "0464d7198cc0ebf88ffa",
-    "url": "/countries-of-the-world/static/js/2.18598ed8.chunk.js"
+    "revision": "56a638776011472886b6",
+    "url": "/countries-of-the-world/static/js/2.d39bc4f9.chunk.js"
   },
   {
-    "revision": "64bea2e190f27355a76963b8cb94bb7b",
-    "url": "/countries-of-the-world/static/js/2.18598ed8.chunk.js.LICENSE.txt"
+    "revision": "1ff3c45f60018cab500afb94c2685876",
+    "url": "/countries-of-the-world/static/js/2.d39bc4f9.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "dc3f9e20b170bc807e1e",
-    "url": "/countries-of-the-world/static/js/main.a7304d32.chunk.js"
+    "revision": "d1b6a6c1471724042230",
+    "url": "/countries-of-the-world/static/js/main.56144dcd.chunk.js"
   },
   {
     "revision": "2533d1e1810f17a21939",
