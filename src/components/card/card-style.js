@@ -1,11 +1,11 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export default styled.div`
-  height: 300px;
-  width: 225px;
   justify-self: center;
   cursor: pointer;
   transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
 
   &:hover {
     transform: translateY(-10px);
@@ -15,12 +15,12 @@ export default styled.div`
   img {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    height: 155px;
+    height: 100%;
     width: 100%;
+    object-fit: cover;
   }
 
   .info {
-    height: 135px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
